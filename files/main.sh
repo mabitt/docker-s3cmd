@@ -48,7 +48,7 @@ if [ ${cmd} != "interactive" ]; then
   # sync-local-to-s3 - copy from local to s3
   #
   if [ "${cmd}" = "sync-local-to-s3" ]; then
-      ${S3CMD_PATH} --config=/.s3cfg sync /opt/src/ ${DEST_S3}
+      ${S3CMD_PATH} --no-preserve --config=/.s3cfg sync /opt/src/ ${DEST_S3}
   fi
 else
   # Copy file over to the default location where S3cmd is looking for the config file
